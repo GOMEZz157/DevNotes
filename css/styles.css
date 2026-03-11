@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+}
+
+body {
+  background: #050142;
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-input {
+  background-color: #717377;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: #ddd;
+  width: 400px;
+  outline: none;
+
+  &::placeholder {
+    color: #ddd;
+  }
+}
+
+#export-notes {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #1308a3;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    color: #1308a3;
+    background-color: #fff;
+  }
+}
+
+/* Form de nova nota */
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 1rem auto 0;
+  gap: 1rem;
+
+  button,
+  input {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  input {
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #1308a3;
+    color: #fff;
+    border: 1px solid #fff;
+    opacity: 0.7;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/* Notas */
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.note {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid #2a2a6e;
+  background-color: #0a0933;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+
+  textarea {
+    background-color: transparent;
+    resize: none;
+    color: #fff;
+    border: none;
+    height: 100%;
+    outline: none;
+  }
+
+  &:hover > i {
+    opacity: 1;
+  }
+
+  .fa-thumbtack {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    background-color: #1308a3;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .fa-trash-can,
+  .fa-clone {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9rem;
+    padding: 5px;
+    transition: 0.3s;
+    color: #555;
+    opacity: 0;
+  }
+
+  .fa-trash-can:hover,
+  .fa-clone:hover {
+    color: #fff;
+  }
+
+  .fa-clone {
+    top: 40px;
+  }
+}
+
+.note.fixed {
+  background-color: #0a088b;
+}
