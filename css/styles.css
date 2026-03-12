@@ -160,3 +160,47 @@ header {
 .note.fixed {
   background-color: #0a088b;
 }
+
+/* Responsivo */
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  #search-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #search-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #add-note-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  #notes-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .note {
+    min-height: 180px;
+  }
+
+  /* ícones sempre visíveis no mobile */
+  .note .fa-trash-can,
+  .note .fa-clone {
+    opacity: 1;
+  }
+}
